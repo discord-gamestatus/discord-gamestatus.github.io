@@ -37,13 +37,13 @@ Discord Gamestatus would like to make sure you are fully aware of all of your da
 - The right to object to processing – You have the right to object to Discord Gamestatus’s processing of your personal data, under certain conditions.
 - The right to data portability – You have the right to request that Discord Gamestatus transfer the data that we have collected to another organization, or directly to you, under certain conditions.
 
-If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please message us at [contact][douile.com/contact]
+If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please message us at [douile.com/contact][contact]
 
 # How to contact us
 
 If you have any questions about Discord Gamestatus’s privacy policy, the data we hold on you, or you would like to exercise one of your data protection rights, please do not hesitate to contact us.
 
-Message us at: [contact][douile.com/contact]
+Message us at: [douile.com/contact][contact]
 
 # How to contact the appropriate authority
 
