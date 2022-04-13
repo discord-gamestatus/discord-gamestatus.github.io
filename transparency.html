@@ -1,0 +1,56 @@
+---
+title: Transparency
+permalink: /transparency/
+layout: page
+---
+
+<script async>
+const data = (async function() {
+  const r = await fetch('https://api.douile.com/api/gamestatus/transparency');
+  return r.json();
+})();
+window.addEventListener('DOMContentLoaded', async function() {
+  const d = await data;
+
+  const table = document.querySelector('#expense-table');
+  const earnings = table.querySelector('#earnings');
+  const expenses = table.querySelector('#expenses');
+  const total = table.querySelector('#total');
+
+  const formatter = new Intl.NumberFormat(undefined, {
+    currency: 'USD',
+    style: 'currency',
+  });
+
+  let totalAmount = 0;
+  for (const earning of d.earnings) {
+    const row = earnings.insertRow();
+    row.insertCell().innerText = earning.name;
+    row.insertCell().innerText = formatter.format(earning.amount_cents/100);
+    totalAmount += earning.amount_cents;
+  }
+  for (const expense of d.costs) {
+    const row = expenses.insertRow();
+    row.insertCell().innerText = expense.name;
+    row.insertCell().innerText = formatter.format(expense.amount_cents/100);
+    totalAmount -= expense.amount_cents;
+  }
+
+  total.innerText = formatter.format(totalAmount/100);
+}, { once: true });
+</script>
+
+<p>Listed are our earnings/expenses for the last month (tax not included).</p>
+<table id="expense-table">
+  <thead>
+    <tr><th>Earning</th><th>Amount</th></tr>
+  </thead>
+  <tbody id="earnings"/>
+  <thead>
+    <tr><th>Expense</th><th>Amount</th></tr>
+  </thead>
+  <tbody id="expenses"/>
+  <thead>
+    <tr><th>Total</th><th id="total"/></tr>
+  </thead>
+</table>

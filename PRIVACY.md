@@ -1,3 +1,8 @@
+---
+layout: page
+title: Privacy policy
+permalink: /PRIVACY/
+---
 # What data do we collect?
 
 - guild ID, channel ID, and message ID (discord snowflakes) of active status messages
