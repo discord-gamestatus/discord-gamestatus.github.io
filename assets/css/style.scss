@@ -1,0 +1,23 @@
+---
+---
+
+@charset "utf-8";
+
+/*
+@import "minima/skins/{{ site.minima.skin | default: 'classic' }}";
+@import "minima/initialize";
+*/
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+$highlight-color: #5555FF;
+
+.button-big {
+  display: inline-block;
+  padding: 1em;
+  border-radius: 15px;
+  background: $highlight-color;
+  color: $text-color;
+  width: 100%;
+}

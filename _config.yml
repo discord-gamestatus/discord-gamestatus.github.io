@@ -24,6 +24,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 domain: "gamestatus.douile.com"
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://gamestatus.douile.com" # the base hostname & protocol for your site, e.g. http://example.com
+locale: "en-GB"
+repository: "discord-gamestatus/discord-gamestatus.github.io"
 
 author:
   name: "GameStatus"
@@ -31,7 +33,7 @@ author:
 twitter:
   card: summary
 
-logo: "/assets/android-chrome-256x256.png"
+logo: "/assets/favicon/android-chrome-256x256.png"
 
 social:
   name: GameStatus
@@ -43,11 +45,34 @@ minima:
   social_links:
     github: discord-gamestatus
 
+header_pages:
+  - docs/index.md
+  - transparency.html
+
+footer:
+  links:
+    - label: "Privacy policy"
+      url: "/PRIVACY/"
+    - label: "Terms of usage"
+      url: "/TERMS/"
+
+minimal_mistakes_skin: "dark"
+
 # Build settings
-theme: minima
+#theme: minima
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-include-cache
+  - jekyll-discord-visualizer
 
+search: true
+
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -68,3 +93,22 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false

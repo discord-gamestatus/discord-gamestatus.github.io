@@ -14,5 +14,4 @@ This site is a WIP
 - [Patreon](https://www.patreon.com/Gamestatus)
 - [Privacy policy](./PRIVACY/)
 - [Terms of usage](./TERMS/)
-- [About us](./about/)
 - [Financials](./transparency/)

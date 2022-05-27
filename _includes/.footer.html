@@ -18,9 +18,12 @@
           {% if site.author.email -%}
             <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
           {%- endif %}
-            <li>{%- include social.html -%}</li>
         </ul>
       {%- endif %}
+        <p>
+        <a href="/PRIVACY/">Privacy policy</a>
+        <a href="/TERMS/">Terms of usage</a>
+        </p>
       </div>
       <div class="footer-col">
         <p>{{ site.description | escape }}</p>
