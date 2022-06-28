@@ -1,6 +1,6 @@
 ---
 title: Documentation
-layout: default
+layout: single
 ---
 
 For documentation on how to use the bot check out our
