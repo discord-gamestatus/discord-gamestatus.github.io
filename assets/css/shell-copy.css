@@ -1,0 +1,27 @@
+.language-shell pre.highlight {
+  padding-top: 2em !important;
+}
+
+.language-shell pre.highlight::before {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  content: '   ';
+  background-image: url(/assets/images/copy.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #363d4a;
+  padding: 0 0 0.5em 0.5em;
+  border-radius: 0 0 0 15px;
+  opacity: 0;
+  transition: opacity ease 0.5s;
+}
+
+.language-shell:hover pre.highlight::before {
+  opacity: 1;
+}
+
+.language-shell.copied-successfully pre.highlight::before {
+  background-image: url(/assets/images/check.svg);
+}
