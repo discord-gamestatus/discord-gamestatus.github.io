@@ -93,9 +93,18 @@ The bot is configured through a combination of environment variables and CLI par
 you they are mostly interchangeable).
 
 ### The important stuff
-TODO
+These environment variables are required to for the bot to start
+
 - Discord API Key
+  - `DISCORD_API_KEY=...`
 - Database parameters
+  - `PG_DATABASE=discord-gamestatus` (name of database)
+  - `PGHOST=ip of postgres database`
+  - `PGUSER=database user`
+  - `PGPASSWORD=database password`
+
+### Setup the database
+To configure the database you must run the sql files within scripts/schemas in numerical order.
 
 ### Everything else
 TODO
@@ -137,8 +146,41 @@ $ node bin/discord-gamestatus
 TODO
 
 # Docker (build from source)
-TODO
+I would recommend you use [podman][podman] (in rootless mode) instead of [docker][docker] for the
+best security (Simply swap `docker` in commands for `podman`; e.g. `podman-compose`).
+
+## Clone the repo
+```shell
+$ git clone https://github.com/discord-gamestatus/discord-gamestatus
+$ cd discord-gamestatus
+```
+
+## Edit the config
+```shell
+$ cp .env.example .env
+```
+
+Edit the `.env` file to configure the bot
+
+## Setup the database (only do this once, don't need to do when updating bot)
+```shell
+$ docker-compose up -d postgres
+$ docker-compose exec postgres sh
+# psql -U discord-gamestatus -d discord-gamestatus
+discord-gamestatus=# \i /opt/1.sql
+discord-gamestatus=# \i /opt/2.sql
+discord-gamestatus=# exit
+# exit
+```
+
+## Start the bot
+```
+$ docker-compose up --build
+```
+
 
 [node]: https://nodejs.org/en/download/
 [git]: https://git-scm.com/downloads
 [postgres]: https://www.postgresql.org/
+[docker]: https://docker.io/
+[podman]: https://podman.io/
