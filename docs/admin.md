@@ -28,6 +28,11 @@ your OS.
 ### PostgreSQL database
 A [PostgreSQL][postgres] database is required.
 
+This guide doesn't go into detail but you will need to create a user on the database with:
+- `CONNECT` on the database
+- `USAGE, SELECT, INSERT, UPDATE, DELETE` on the tables
+- `USAGE, SELECT` on sequences
+
 ## Optional
 ### Git
 We use [git][git] as our Version Control System, to more easily download the source code and update it
@@ -106,6 +111,20 @@ These environment variables are required to for the bot to start
 ### Setup the database
 To configure the database you must run the sql files within scripts/schemas in numerical order.
 
+```shell
+$ sudo -u postgres psql -d discord-gamestatus
+discord-gamestatus=# \i ./scripts/schemas/1.sql
+discord-gamestatus=# \i ./scripts/schemas/2.sql
+```
+
+And grant permissions to the user (`;` are important here), replace username "discord-gamestatus"
+with the name of the role/user you created.
+
+```shell
+discord-gamestatus=# GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO "discord-gamestatus";
+discord-gamestatus=# GRANT USAGE, SELECT, UPDATE ON ALL SEQUENCES IN SCHEMA public TO "discord-gamestatus";
+```
+
 ### Everything else
 TODO
 
@@ -134,6 +153,8 @@ Usage:
 	--support [link]		Link to the support server
 	-h, --help			Show this help message
 ```
+
+These can all be configured by environment variable e.g. `GS_TICK_COUNT`
 
 ## Starting the bot
 Once everything else is done, you're finally ready to start the bot.
