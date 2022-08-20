@@ -11,8 +11,9 @@ function walkElementTree(startElement, condition, root) {
   return null;
 }
 document.documentElement.addEventListener('click', (e) => {
+  const selection = window.getSelection().toString();
   const code = walkElementTree(e.target, (el) => el.tagName === 'DIV' && el.classList.contains('language-shell'));
-  if (code) {
+  if ((e.buttons & ~1) === 0 && selection.length === 0 && code) {
     e.preventDefault();
     const shellCode = code.innerText.split('\n')
       .filter(line => line.startsWith('$ '))
