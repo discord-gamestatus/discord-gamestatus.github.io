@@ -93,6 +93,9 @@ $ npm run build
 > npx tsc
 ```
 
+## TODO: scheduler
+These docs are incomplete for the latest version please use pre 2.1 version.
+
 ## Configuring
 The bot is configured through a combination of environment variables and CLI parameters (although
 you they are mostly interchangeable).
@@ -164,24 +167,77 @@ $ node bin/discord-gamestatus
 ```
 
 # Docker
-TODO
+I would recommend you use [podman][podman] (in rootless mode) instead of [docker][docker] for the
+best security (Simply swap `docker` in commands for `podman`; e.g. `podman-compose`). However docker
+is easier to setup.
+
+## Install docker
+This varies based on OS but for debian based distros:
+
+```shell
+# apt-get update
+# apt-get install docker docker-compose
+```
+
+## Clone the repo
+```shell
+$ git clone https://github.com/discord-gamestatus/discord-gamestatus.git
+$ cd discord-gamestatus
+```
+
+## Create a config
+```shell
+$ cp .env.example .env
+$ nano .env
+```
+
+Edit the `.env` file to configure the bot, make sure to add your `DISCORD_API_KEY` and change the
+`DATABASE_PASS`.
+
+
+## Setup the database
+```shell
+$ docker-compose up -d postgres
+$ docker-compose exec postgres sh
+# psql -U discord-gamestatus -d discord-gamestatus
+discord-gamestatus=# \i /opt/1.sql
+discord-gamestatus=# \i /opt/2.sql
+discord-gamestatus=# \i /opt/3.sql
+discord-gamestatus=# \i /opt/4.sql
+discord-gamestatus=# exit
+# exit
+```
+
+## Start the bot
+```
+$ docker-compose up -d
+```
+
+To view logs use `docker-compose logs` or `docker-compose logs -f`
 
 # Docker (build from source)
 I would recommend you use [podman][podman] (in rootless mode) instead of [docker][docker] for the
 best security (Simply swap `docker` in commands for `podman`; e.g. `podman-compose`).
 
 ## Clone the repo
+
 ```shell
 $ git clone https://github.com/discord-gamestatus/discord-gamestatus
 $ cd discord-gamestatus
 ```
 
 ## Edit the config
+
 ```shell
 $ cp .env.example .env
 ```
 
 Edit the `.env` file to configure the bot
+
+## Replace the docker-compose file with the docker-compose build file
+```shell
+$ cp docker-compose.build.yml docker-compose.yml
+```
 
 ## Setup the database (only do this once, don't need to do when updating bot)
 ```shell
@@ -190,6 +246,8 @@ $ docker-compose exec postgres sh
 # psql -U discord-gamestatus -d discord-gamestatus
 discord-gamestatus=# \i /opt/1.sql
 discord-gamestatus=# \i /opt/2.sql
+discord-gamestatus=# \i /opt/3.sql
+discord-gamestatus=# \i /opt/4.sql
 discord-gamestatus=# exit
 # exit
 ```
