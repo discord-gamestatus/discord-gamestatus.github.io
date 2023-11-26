@@ -1,0 +1,513 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Chat commands - GameStatus</title>
+<meta name="description" content="Discord Gamestatus a is bot that automatically updates your discord server with the current state of your game server.">
+
+
+  <meta name="author" content="GameStatus">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="GameStatus">
+<meta property="og:title" content="Chat commands">
+<meta property="og:url" content="https://gamestatus.douile.com/docs/user/chat.html">
+
+
+  <meta property="og:description" content="Discord Gamestatus a is bot that automatically updates your discord server with the current state of your game server.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://gamestatus.douile.com/docs/user/chat.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "GameStatus",
+      "url": "https://gamestatus.douile.com/",
+      "sameAs": ["https://github.com/discord-gamestatus"]
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="GameStatus Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/favicon/android-chrome-256x256.png" alt="GameStatus"></a>
+        
+        <a class="site-title" href="/">
+          GameStatus
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/docs/">Documentation</a>
+            </li><li class="masthead__menu-item">
+              <a href="/docs/user/faq">FAQ</a>
+            </li><li class="masthead__menu-item">
+              <a href="/transparency/">Transparency</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Chat commands">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Chat commands
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> Commands</h4></header>
+              <ul class="toc__menu"><li><a href="#getting-started">Getting started</a><ul><li><a href="#1-create-your-status">1. Create your status</a></li><li><a href="#2-customise-your-status">2. Customise your status</a></li></ul></li><li><a href="#commands">Commands</a><ul><li><a href="#help">help</a></li><li><a href="#gamelist">gamelist</a></li><li><a href="#status">status</a></li><li><a href="#statusmod">statusmod</a><ul><li><a href="#list-status-messages-in-current-guild">List status messages in current guild</a></li><li><a href="#view-settings-for-a-status">View settings for a status</a></li><li><a href="#modify-setting-for-a-status">Modify setting for a status</a></li><li><a href="#settings-values">Settings values</a></li><li><a href="#formatting-specifiers">Formatting specifiers</a></li></ul></li><li><a href="#statusremove">statusremove</a></li><li><a href="#statusclear">statusclear</a></li><li><a href="#statusrefresh">statusrefresh</a></li><li><a href="#limits">limits</a></li><li><a href="#botinfo">botinfo</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <link rel="stylesheet" href="https://cdn.rawgit.com/Douile/discord-visualizer/master/css/discord.css" />
+
+<h1 id="getting-started">Getting started</h1>
+
+<h2 id="1-create-your-status">1. Create your status</h2>
+
+<p>Find the short name for your game by searching with the gamelist command (the name you need is
+after the =).</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!gamelist Counter-strike</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">6 Available games</div><div class="embed-fields"><div class="embed-field"><div class="embed-field-value markup">Counter-Strike 1.5 (2002) = <code class="inline">cs15</code>
+Counter-Strike 1.6 (2003) = <code class="inline">cs16</code>
+Counter-Strike: 2D (2004) = <code class="inline">cs2d</code>
+Counter-Strike: Condition Zero (2004) = <code class="inline">cscz</code>
+Counter-Strike: Source (2004) = <code class="inline">css</code>
+Counter-Strike: Global Offensive (2012) = <code class="inline">csgo</code></div></div></div></div></div><div><span class="embed-footer">1</span></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<p>Create the status message by specifying the game name you just found and the IP of your server (you
+may also need to specify a port after your IP using a colon: IP:PORT).</p>
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!status csgo 10.150.150.150</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">SERVER NAME</div><div class="embed-description markup">Playing MAP with X/Y players
+Connect with <a title="" href="steam://connect/10.150.150.150" target="_blank" rel="noreferrer">steam://connect/10.150.150.150</a></div><div class="embed-fields"><div class="embed-field embed-field-inline"><div class="embed-field-value markup">Player 1
+Player 4</div></div><div class="embed-field embed-field-inline"><div class="embed-field-value markup">Player 2</div></div><div class="embed-field embed-field-inline"><div class="embed-field-value markup">Player 3</div></div></div></div></div><div><span class="embed-footer">⚪</span></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<p>Once the message is created it will update every few minutes.</p>
+
+<h2 id="2-customise-your-status">2. Customise your status</h2>
+
+<p>You can get a list of the currently active statuses in your server using the statusmod command.</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!statusmod</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">1 Active statuses</div><div class="embed-fields"><div class="embed-field"><div class="embed-field-name">#0</div><div class="embed-field-value markup">SERVER NAME [<code class="inline">IP</code>]
+<a title="" href="https://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896" target="_blank" rel="noreferrer">https://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896</a></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<p>This links you to the active message, and tells you what each statuses’ ID is (#ID). Using this ID
+you can view the settings for each status.</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!statusmod 0</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">#0</div><div class="embed-description markup">SERVER NAME [<code class="inline">IP</code>]
+<a title="" href="https://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896" target="_blank" rel="noreferrer">https://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896</a></div><div class="embed-fields"><div class="embed-field embed-field-inline"><div class="embed-field-name">title</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-string">&quot;{name}&quot;</span></code></pre></div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">offlineTitle</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-string">&quot;{name}&quot;</span></code></pre></div></div><div class="embed-field"><div class="embed-field-name"> </div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">description</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-string">&quot;Playing {map} with {numplayers}/{maxplayers} players\nConnect with {connect}&quot;</span></code></pre></div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">offlineDescription</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-string">&quot;Server is offline&quot;</span></code></pre></div></div><div class="embed-field"><div class="embed-field-name"> </div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">color</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-number">2659522</span></code></pre></div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">offlineColor</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-number">16711680</span></code></pre></div></div><div class="embed-field"><div class="embed-field-name"> </div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">connectUpdate</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-keyword">false</span></code></pre></div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">disconnectUpdate</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-keyword">false</span></code></pre></div></div><div class="embed-field"><div class="embed-field-name"> </div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">columns</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-number">3</span></code></pre></div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">maxEdits</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-number">900000</span></code></pre></div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">dots</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-punctuation">[</span><span class="hljs-string">&quot;⚪&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-string">&quot;⚫&quot;</span><span class="hljs-punctuation">]</span></code></pre></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<p>You can modify any of these values using the statusmod command.</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!statusmod 0 title New
+Title</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">#0</div><div class="embed-description markup">SERVER NAME [<code class="inline">IP</code>]
+<a title="" href="https://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896" target="_blank" rel="noreferrer">https://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896</a>
+Set <code class="inline">title=New
+Title</code>
+<em>Changes will not take effect until after the status has updated</em></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<p>For more details see <a href="#statusmod">statusmod</a>.</p>
+
+<h1 id="commands">Commands</h1>
+<h2 id="help">help</h2>
+<p>List available commands or get help with a specific command.</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!help</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">Help</div><div class="embed-description markup"><code class="inline">!botinfo</code>
+<code class="inline">!gamelist</code>
+<code class="inline">!help</code>
+<code class="inline">!limits</code>
+<code class="inline">!status</code>
+<code class="inline">!statusclear</code>
+<code class="inline">!statusmod</code>
+<code class="inline">!statusrefresh</code>
+<code class="inline">!statusremove</code>
+<code class="inline">!tickdebug</code></div></div></div><div><span class="embed-footer">Use &quot;!help commandName&quot; for detailed help</span></div></div></div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord bot</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!help info</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">Help</div><div class="embed-fields"><div class="embed-field"><div class="embed-field-name">!botinfo</div><div class="embed-field-value markup">Output runtime information</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<h2 id="gamelist">gamelist</h2>
+<p>Output the list of games available, searchable with any text</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!gamelist Counter-strike</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">6 Available games</div><div class="embed-fields"><div class="embed-field"><div class="embed-field-value markup">Counter-Strike 1.5 (2002) = <code class="inline">cs15</code>
+Counter-Strike 1.6 (2003) = <code class="inline">cs16</code>
+Counter-Strike: 2D (2004) = <code class="inline">cs2d</code>
+Counter-Strike: Condition Zero (2004) = <code class="inline">cscz</code>
+Counter-Strike: Source (2004) = <code class="inline">css</code>
+Counter-Strike: Global Offensive (2012) = <code class="inline">csgo</code></div></div></div></div></div><div><span class="embed-footer">1</span></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<h2 id="status">status</h2>
+<p>Create a status message that updates automatically in the current channel.</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!status csgo 10.150.150.150:27015</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">SERVER NAME</div><div class="embed-description markup">Playing MAP with X/Y players
+Connect with <a title="" href="steam://connect/10.150.150.150" target="_blank" rel="noreferrer">steam://connect/10.150.150.150</a></div><div class="embed-fields"><div class="embed-field embed-field-inline"><div class="embed-field-value markup">Player 1
+Player 4</div></div><div class="embed-field embed-field-inline"><div class="embed-field-value markup">Player 2</div></div><div class="embed-field embed-field-inline"><div class="embed-field-value markup">Player 3</div></div></div></div></div><div><span class="embed-footer">⚪</span></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<p>You may get an error that the server is unreachable:</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">The server (<code class="inline">10.150.150.150:27015</code>) was offline or unreachable</div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<p>This means the bot was unable to contact the IP you specified and fetch the server info, if this
+happens check that:</p>
+<ul>
+  <li>You are using the correct game</li>
+  <li>The server is online</li>
+  <li>The server has queries enabled</li>
+  <li>The query port you specified is correct</li>
+  <li>You can connect to your server normally</li>
+  <li>You cannot query the server yourself using gamedig (see below; requires nodejs)</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>gamedig
+<span class="nb">cd </span>gamedig
+npm init <span class="nt">-y</span>
+npm <span class="nb">install </span>gamedig
+npx gamedig <span class="nt">--debug</span> <span class="nt">--type</span> GAME IP
+<span class="c"># Example: npx gamedig --debug --type csgo 10.150.150.150:27015</span>
+</code></pre></div></div>
+
+<p>If none of these fix the issue and the gamedig query fails ask for support in our discord server.</p>
+
+<h2 id="statusmod">statusmod</h2>
+<p>List/View/Modify status message settings.</p>
+
+<h3 id="list-status-messages-in-current-guild">List status messages in current guild</h3>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!statusmod</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">1 Active statuses</div><div class="embed-fields"><div class="embed-field"><div class="embed-field-name">#0</div><div class="embed-field-value markup">SERVER NAME [<code class="inline">IP</code>]
+<a title="" href="https://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896" target="_blank" rel="noreferrer">https://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896</a></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<h3 id="view-settings-for-a-status">View settings for a status</h3>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!statusmod 0</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">#0</div><div class="embed-description markup">SERVER NAME [<code class="inline">IP</code>]
+<a title="" href="https://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896" target="_blank" rel="noreferrer">https://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896</a></div><div class="embed-fields"><div class="embed-field embed-field-inline"><div class="embed-field-name">title</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-string">&quot;{name}&quot;</span></code></pre></div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">offlineTitle</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-string">&quot;{name}&quot;</span></code></pre></div></div><div class="embed-field"><div class="embed-field-name"> </div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">description</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-string">&quot;Playing {map} with {numplayers}/{maxplayers} players\nConnect with {connect}&quot;</span></code></pre></div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">offlineDescription</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-string">&quot;Server is offline&quot;</span></code></pre></div></div><div class="embed-field"><div class="embed-field-name"> </div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">color</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-number">2659522</span></code></pre></div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">offlineColor</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-number">16711680</span></code></pre></div></div><div class="embed-field"><div class="embed-field-name"> </div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">connectUpdate</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-keyword">false</span></code></pre></div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">disconnectUpdate</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-keyword">false</span></code></pre></div></div><div class="embed-field"><div class="embed-field-name"> </div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">columns</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-number">3</span></code></pre></div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">maxEdits</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-number">900000</span></code></pre></div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">dots</div><div class="embed-field-value markup"><pre><code class="hljs json"><span class="hljs-punctuation">[</span><span class="hljs-string">&quot;⚪&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-string">&quot;⚫&quot;</span><span class="hljs-punctuation">]</span></code></pre></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<h3 id="modify-setting-for-a-status">Modify setting for a status</h3>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!statusmod 0 title New
+Title</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">#0</div><div class="embed-description markup">SERVER NAME [<code class="inline">IP</code>]
+<a title="" href="https://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896" target="_blank" rel="noreferrer">https://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896</a>
+Set <code class="inline">title=New
+Title</code>
+<em>Changes will not take effect until after the status has updated</em></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<h3 id="settings-values">Settings values</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">setting</th>
+      <th style="text-align: left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">offlineTitle</code>, <code class="language-plaintext highlighter-rouge">description</code>, <code class="language-plaintext highlighter-rouge">offlineDescription</code></td>
+      <td style="text-align: left">Take generic text, dynamic content can be added by using <a href="#formatting-specifiers">formatting specifiers</a> (for multiple lines use shift+enter)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">color</code>, <code class="language-plaintext highlighter-rouge">offlineColor</code></td>
+      <td style="text-align: left">Take RGB color values as decimal (red = 16711680) or hex (red = 0xff0000)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">connectUpdate</code>, <code class="language-plaintext highlighter-rouge">disconnectUpdate</code></td>
+      <td style="text-align: left">Accepts true or false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">columns</code></td>
+      <td style="text-align: left">Takes a number for the number of player name columns, set to 0 to disable player names</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">maxEdits</code></td>
+      <td style="text-align: left"><em>deprecated</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">dots</code></td>
+      <td style="text-align: left">Takes space separated list of dots</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="formatting-specifiers">Formatting specifiers</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">specifier</th>
+      <th style="text-align: left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">{name}</code></td>
+      <td style="text-align: left">Name of the server (as reported by server query)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">{map}</code></td>
+      <td style="text-align: left">Name of the active map</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">{numplayers}</code></td>
+      <td style="text-align: left">Number of players reported by query</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">{validPlayers}</code></td>
+      <td style="text-align: left">Number of players that will be displayed in player list</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">{maxplayers}</code></td>
+      <td style="text-align: left">Player limit</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">{connect}</code></td>
+      <td style="text-align: left">Generated URL to connect to server or the server IP</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="statusremove">statusremove</h2>
+<p>Delete a specific status update by replying to the message containing it or by specifying the ID.</p>
+
+<p>TODO: Reply example</p>
+
+<p>You can find the channel/message ID by enabling developer mode in Discord’s settings then right
+clicking the channel/message and selecting Copy ID.</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!statusremove #channel ID</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">Done</div><div class="embed-description markup">The status message has been removed</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<h2 id="statusclear">statusclear</h2>
+<p>Delete all status messages in the current channel.</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!statusclear</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">1 Status updates have been cleared</div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<h2 id="statusrefresh">statusrefresh</h2>
+<p>Force the bot to send a new status message for all those that are configured in the current channel
+(it will also attempt to delete the old messages).</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!statusrefresh</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">Done</div><div class="embed-description markup">Refreshed 1 updates</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<h2 id="limits">limits</h2>
+<p>View (and refresh) the limits for the current server (or yourself if sent via DM).</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!limits</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-author"><img src="https://cdn.discordapp.com/embed/avatars/0.png" role="presentation" class="embed-author-icon" /><span class="embed-author-name">You</span></div><div class="embed-fields"><div class="embed-field embed-field-inline"><div class="embed-field-name">channelLimit</div><div class="embed-field-value markup">5</div></div><div class="embed-field embed-field-inline"><div class="embed-field-name">guildLimit</div><div class="embed-field-value markup">5</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+<p>The limits shown above state that you can have a maximum of 5 messages per channel and 5 messages
+per guild.</p>
+
+<h2 id="botinfo">botinfo</h2>
+<p>Get information about the bot.</p>
+
+<div class="w-100 h-100 br2 flex flex-column white overflow-hidden bg-discord-dark"><div class="w-100 h-100 overflow-auto pa2 discord-view"><div class="flex-vertical whitney theme-dark"><div class="chat flex-vertical flex-spacer"><div class="content flex-spacer flex-horizontal"><div class="flex-spacer flex-vertical messages-wrapper"><div class="scroller-wrap"><div class="scroller messages"><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/embed/avatars/0.png&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">You</strong></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"><div class="markup">!botinfo</div></div></div></div></div><div class="message-group hide-overflow "><div class="avatar-large animate" style="background-image:url(&#x27;https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80&#x27;)"></div><div class="comment"><div class="message first"><h2 style="line-height:16px"><span class="username-wrapper v-btm"><strong class="user-name">Discord Gamestatus</strong><span class="bot-tag">BOT</span></span><span class="highlight-separator"> - </span><span class="timestamp">Today at 4:25 PM</span></h2><div class="message-text"></div><div class="accessory"><div class="embed-wrapper"><div class="embed-color-pill" style="background-color:rgba(85,85,255,1)"></div><div class="embed embed-rich"><div class="embed-content"><div class="embed-content-inner"><div class="embed-title">discord-gamestatus info</div><div class="embed-description markup"><a title="" href="https://github.com/discord-gamestatus/discord-gamestatus" target="_blank" rel="noreferrer">discord-gamestatus v1.15.3</a> <a title="" href="https://github.com/discord-gamestatus/discord-gamestatus/issues" target="_blank" rel="noreferrer">Report bugs here</a>
+<a title="" href="https://discord.gg/CUefWnZ" target="_blank" rel="noreferrer">Join the support server</a>
+Average ping: 103ms
+Uptime: 8 hours 58 minutes 5 seconds
+Working in 2239 guilds
+Memory usage: 265857kb/307892kb
+<strong>Dependencies</strong>
+<a title="" href="https://nodejs.org" target="_blank" rel="noreferrer">NodeJS v17.8.0</a>
+<a title="" href="https://github.com/timotejroiko/discord.js-light" target="_blank" rel="noreferrer">discord.js-light</a>
+<a title="" href="https://github.com/discordjs/discord.js" target="_blank" rel="noreferrer">discord.js</a>
+<a title="" href="https://github.com/gamedig/node-gamedig" target="_blank" rel="noreferrer">gamedig</a></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="/PRIVACY/" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Privacy policy</a></li>
+        
+      
+        
+          <li><a href="/TERMS/" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Terms of usage</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 GameStatus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

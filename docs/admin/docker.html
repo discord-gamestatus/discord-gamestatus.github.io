@@ -1,0 +1,358 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Docker Install - GameStatus</title>
+<meta name="description" content="Discord Gamestatus a is bot that automatically updates your discord server with the current state of your game server.">
+
+
+  <meta name="author" content="GameStatus">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="GameStatus">
+<meta property="og:title" content="Docker Install">
+<meta property="og:url" content="https://gamestatus.douile.com/docs/admin/docker.html">
+
+
+  <meta property="og:description" content="Discord Gamestatus a is bot that automatically updates your discord server with the current state of your game server.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://gamestatus.douile.com/docs/admin/docker.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "GameStatus",
+      "url": "https://gamestatus.douile.com/",
+      "sameAs": ["https://github.com/discord-gamestatus"]
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="GameStatus Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/favicon/android-chrome-256x256.png" alt="GameStatus"></a>
+        
+        <a class="site-title" href="/">
+          GameStatus
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/docs/">Documentation</a>
+            </li><li class="masthead__menu-item">
+              <a href="/docs/user/faq">FAQ</a>
+            </li><li class="masthead__menu-item">
+              <a href="/transparency/">Transparency</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Docker Install">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Docker Install
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> Installation</h4></header>
+              <ul class="toc__menu"><li><a href="#notes">Notes</a></li><li><a href="#install-docker">Install docker</a></li><li><a href="#clone-the-repo">Clone the repo</a></li><li><a href="#setup-a-configuration">Setup a configuration</a></li><li><a href="#start-the-bot">Start the bot</a><ul><li><a href="#aside-building-the-docker-images">Aside: building the docker images</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <link rel="stylesheet" href="/assets/css/shell-copy.css" />
+
+<script src="/assets/js/shell-copy.js" async=""></script>
+
+<h1 id="notes">Notes</h1>
+<ul>
+  <li>Commands listed (unless otherwise specified) should work on both unix and windows systems.</li>
+  <li>I would recommend you use <a href="https://podman.io/">podman</a> (in rootless mode) instead of <a href="https://docker.io/">docker</a> for the
+best security (Simply swap <code class="language-plaintext highlighter-rouge">docker</code> in commands for <code class="language-plaintext highlighter-rouge">podman</code>; e.g. <code class="language-plaintext highlighter-rouge">podman-compose</code>). However docker
+is easier to setup. The commands listed here should work for both.</li>
+</ul>
+
+<h1 id="install-docker">Install docker</h1>
+<p>This varies based on OS but for debian based distros:</p>
+
+<p><em>Only works on debian based linux OS</em></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># apt-get update</span>
+<span class="c"># apt-get install docker docker-compose</span>
+</code></pre></div></div>
+
+<p>More info can be found on the <a href="https://docker.io/">docker website</a>.</p>
+
+<h1 id="clone-the-repo">Clone the repo</h1>
+<p>To fetch the source-code we need to download the git repo:</p>
+
+<p>You can use the git command:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/discord-gamestatus/discord-gamestatus.git
+<span class="nv">$ </span><span class="nb">cd </span>discord-gamestatus
+<span class="nv">$ </span>git checkout latest
+</code></pre></div></div>
+
+<p>Or download a zip: <a href="https://github.com/discord-gamestatus/discord-gamestatus/archive/refs/tags/latest.zip">https://github.com/discord-gamestatus/discord-gamestatus/archive/refs/tags/latest.zip</a>.</p>
+
+<h1 id="setup-a-configuration">Setup a configuration</h1>
+<p>The bot requires some base configuration to work.</p>
+
+<ul>
+  <li>Copy the <code class="language-plaintext highlighter-rouge">.env.example</code> file to <code class="language-plaintext highlighter-rouge">.env</code></li>
+  <li>Edit the <code class="language-plaintext highlighter-rouge">.env</code> file to configure the bot, make sure to add:
+    <ul>
+      <li>Your <code class="language-plaintext highlighter-rouge">DISCORD_API_KEY</code> (<a href="../#bot-token">Info on how to get here</a>)</li>
+      <li>A random password for <code class="language-plaintext highlighter-rouge">DATABASE_PASS</code></li>
+      <li>Other configuration options can be found <a href="../#configuring">here</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><em>linux only</em></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cp</span> .env.example .env
+<span class="nv">$ </span>nano .env
+</code></pre></div></div>
+
+<h1 id="start-the-bot">Start the bot</h1>
+<p>When you start the bot for the first time it will download the required programs and also setup the database, this will cause the first start to take longer than normal.</p>
+
+<p>The following command will start the database, scheduler, and bot and run them all in the background.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose up <span class="nt">-d</span>
+</code></pre></div></div>
+
+<p>You can view the logs with</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose logs
+</code></pre></div></div>
+
+<p>And stop everything with</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose down
+</code></pre></div></div>
+
+<h2 id="aside-building-the-docker-images">Aside: building the docker images</h2>
+<p>By default docker will download the latest version of the docker images, however in some cases you may want to build your own images if
+for example you have made local changes to the code or you want to use features that haven’t been released yet.</p>
+
+<p>To build your own docker images edit the <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> file, each service has a <code class="language-plaintext highlighter-rouge">image</code> and <code class="language-plaintext highlighter-rouge">build</code> <a href="docker-compose-docs">¹</a> configuration, to build your own image you want to comment the <code class="language-plaintext highlighter-rouge">image</code> configuration and uncomment the <code class="language-plaintext highlighter-rouge">build</code>.</p>
+
+<p>Example:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+  <span class="na">bot</span><span class="pi">:</span>
+<span class="c1">#    image: "gamestatus/gamestatus-bot"</span>
+    <span class="na">build</span><span class="pi">:</span>
+      <span class="na">context</span><span class="pi">:</span> <span class="s2">"</span><span class="s">."</span>
+      <span class="na">dockerfile</span><span class="pi">:</span> <span class="s2">"</span><span class="s">./docker/Dockerfile.bot"</span>
+</code></pre></div></div>
+
+<p>You can then build the images using:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose build
+</code></pre></div></div>
+
+<p>You don’t need to swap all of these you can choose which parts of the bot you want to build and which you want to download.</p>
+
+<p>If you already ran the bot before building you may need to add the <code class="language-plaintext highlighter-rouge">--force-recreate</code> argument to <code class="language-plaintext highlighter-rouge">docker-compose up</code> to use the new image.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="/PRIVACY/" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Privacy policy</a></li>
+        
+      
+        
+          <li><a href="/TERMS/" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Terms of usage</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 GameStatus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,430 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Manual Install - GameStatus</title>
+<meta name="description" content="Discord Gamestatus a is bot that automatically updates your discord server with the current state of your game server.">
+
+
+  <meta name="author" content="GameStatus">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="GameStatus">
+<meta property="og:title" content="Manual Install">
+<meta property="og:url" content="https://gamestatus.douile.com/docs/admin/manual.html">
+
+
+  <meta property="og:description" content="Discord Gamestatus a is bot that automatically updates your discord server with the current state of your game server.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://gamestatus.douile.com/docs/admin/manual.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "GameStatus",
+      "url": "https://gamestatus.douile.com/",
+      "sameAs": ["https://github.com/discord-gamestatus"]
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="GameStatus Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/favicon/android-chrome-256x256.png" alt="GameStatus"></a>
+        
+        <a class="site-title" href="/">
+          GameStatus
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/docs/">Documentation</a>
+            </li><li class="masthead__menu-item">
+              <a href="/docs/user/faq">FAQ</a>
+            </li><li class="masthead__menu-item">
+              <a href="/transparency/">Transparency</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Manual Install">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Manual Install
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> Installation</h4></header>
+              <ul class="toc__menu"><li><a href="#notes">Notes</a></li><li><a href="#pre-requisites">Pre-requisites</a><ul><li><a href="#required">Required</a><ul><li><a href="#nodejs">Node.js</a></li><li><a href="#postgresql-database">PostgreSQL database</a></li></ul></li><li><a href="#optional">Optional</a><ul><li><a href="#git">Git</a></li></ul></li></ul></li><li><a href="#native-build-from-source">Native (build from source)</a><ul><li><a href="#getting-the-source-code">Getting the source code</a></li><li><a href="#installing-dependencies">Installing dependencies</a></li><li><a href="#building">Building</a></li><li><a href="#todo-scheduler">TODO: scheduler</a></li><li><a href="#configuring">Configuring</a><ul><li><a href="#the-important-stuff">The important stuff</a></li><li><a href="#setup-the-database">Setup the database</a></li><li><a href="#everything-else">Everything else</a></li></ul></li><li><a href="#starting-the-bot">Starting the bot</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <link rel="stylesheet" href="/assets/css/shell-copy.css" />
+
+<script src="/assets/js/shell-copy.js" async=""></script>
+
+<h1 id="notes">Notes</h1>
+<ul>
+  <li>Commands listed (unless otherwise specified) should work on both unix and windows systems.</li>
+  <li>This documentation is outdated since version 2</li>
+</ul>
+
+<h1 id="pre-requisites">Pre-requisites</h1>
+
+<p>GameStatus is built using discord.js, node.js, and typescript, before you start setting up the bot
+there are a few things you need to install first.</p>
+
+<h2 id="required">Required</h2>
+<h3 id="nodejs">Node.js</h3>
+<p><a href="https://nodejs.org">Download</a> and install the latest (or &gt;= v17) version of node for
+your OS.</p>
+
+<h3 id="postgresql-database">PostgreSQL database</h3>
+<p>A <a href="https://www.postgresql.org/">PostgreSQL</a> database is required.</p>
+
+<p>This guide doesn’t go into detail but you will need to create a user on the database with:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CONNECT</code> on the database</li>
+  <li><code class="language-plaintext highlighter-rouge">USAGE, SELECT, INSERT, UPDATE, DELETE</code> on the tables</li>
+  <li><code class="language-plaintext highlighter-rouge">USAGE, SELECT</code> on sequences</li>
+</ul>
+
+<h2 id="optional">Optional</h2>
+<h3 id="git">Git</h3>
+<p>We use <a href="https://git-scm.com/downloads">git</a> as our Version Control System, to more easily download the source code and update it
+install <a href="https://git-scm.com/downloads">git</a> (if you use linux it will be available via your package manager).</p>
+
+<h1 id="native-build-from-source">Native (build from source)</h1>
+<h2 id="getting-the-source-code">Getting the source code</h2>
+<p>Before starting navigate to the directory you wish to install the bot using <code class="language-plaintext highlighter-rouge">cd</code>.</p>
+
+<p>Then to download the source code use <a href="https://git-scm.com/downloads">git</a>.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/discord-gamestatus/discord-gamestatus.git
+</code></pre></div></div>
+
+<h2 id="installing-dependencies">Installing dependencies</h2>
+<p>First navigate to the directory you downloaded the source files to.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>discord-gamestatus
+</code></pre></div></div>
+
+<p>The directory should contain a <code class="language-plaintext highlighter-rouge">package.json</code> file.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span>
+drwxr-xr-x    - user   2 Jun 01:41 bin
+drwxr-xr-x    - user   5 Jun 18:18 scripts
+drwxr-xr-x    - user  26 Jun 14:15 src
+.rw-r--r--  955 user  26 Jun 14:14 docker-compose.yml
+.rw-r--r--  496 user   2 Jun 01:41 Dockerfile
+.rw-r--r--  34k user   2 Apr 22:50 LICENSE
+.rw-r--r-- 188k user   5 Jun 18:28 package-lock.json
+.rw-r--r-- 1.7k user   5 Jun 18:28 package.json
+.rw-r--r--  645 user   2 Jun 01:41 README.md
+.rwx------  171 user  29 Aug  2021 start.sh
+.rw-r--r-- 6.9k user   3 Apr 01:13 tsconfig.json
+</code></pre></div></div>
+
+<p>To install the dependencies use NPM (<a href="https://nodejs.org">node’s</a> package manager), or some alternative.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install
+</span>added 256 packages, and audited 257 packages <span class="k">in </span>6s
+
+49 packages are looking <span class="k">for </span>funding
+  run <span class="sb">`</span>npm fund<span class="sb">`</span> <span class="k">for </span>details
+
+found 0 vulnerabilities
+</code></pre></div></div>
+
+<h2 id="building">Building</h2>
+<p>As we use typescript you need to transpile the codebase before starting the bot, note: you will need
+to do this again each time you edit the source code.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm run build
+
+<span class="o">&gt;</span> discord-gamestatus@2.1.0 build
+<span class="o">&gt;</span> npx tsc
+</code></pre></div></div>
+
+<h2 id="todo-scheduler">TODO: scheduler</h2>
+<p>These docs are incomplete for the latest version please use pre 2.1 version.</p>
+
+<h2 id="configuring">Configuring</h2>
+<p>The bot is configured through a combination of environment variables and CLI parameters (although
+you they are mostly interchangeable).</p>
+
+<h3 id="the-important-stuff">The important stuff</h3>
+<p>These environment variables are required to for the bot to start</p>
+
+<ul>
+  <li>Discord API Key
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">DISCORD_API_KEY=...</code></li>
+    </ul>
+  </li>
+  <li>Database parameters
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">PG_DATABASE=discord-gamestatus</code> (name of database)</li>
+      <li><code class="language-plaintext highlighter-rouge">PGHOST=ip of postgres database</code></li>
+      <li><code class="language-plaintext highlighter-rouge">PGUSER=database user</code></li>
+      <li><code class="language-plaintext highlighter-rouge">PGPASSWORD=database password</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="setup-the-database">Setup the database</h3>
+<p>To configure the database you must run the sql files within scripts/schemas in numerical order.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo</span> <span class="nt">-u</span> postgres psql <span class="nt">-d</span> discord-gamestatus
+discord-gamestatus<span class="o">=</span><span class="c"># \i ./scripts/schemas/1.sql</span>
+discord-gamestatus<span class="o">=</span><span class="c"># \i ./scripts/schemas/2.sql</span>
+</code></pre></div></div>
+
+<p>And grant permissions to the user (<code class="language-plaintext highlighter-rouge">;</code> are important here), replace username “discord-gamestatus”
+with the name of the role/user you created.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>discord-gamestatus<span class="o">=</span><span class="c"># GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO "discord-gamestatus";</span>
+discord-gamestatus<span class="o">=</span><span class="c"># GRANT USAGE, SELECT, UPDATE ON ALL SEQUENCES IN SCHEMA public TO "discord-gamestatus";</span>
+</code></pre></div></div>
+
+<h3 id="everything-else">Everything else</h3>
+<p>TODO</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>node bin/discord-gamestatus <span class="nt">--help</span>
+This program is licensed under GPL-3.0 a license should be included <span class="k">in </span>LICENSE or can be found at https://github.com/Douile/discord-gamestatus/blob/master/LICENSE
+discord-gamestatus: A discord bot that monitors game servers
+https://github.com/Douile/discord-gamestatus
+Usage:
+	<span class="nt">-d</span>, <span class="nt">--debug</span>			Enable debug logging
+	<span class="nt">-v</span>, <span class="nt">--verbose</span>			Enable verbose logging
+	<span class="nt">--no-info</span>			Disable info logging
+	<span class="nt">--no-warn</span>			Disable warning logging
+	<span class="nt">--no-error</span>			Disable error logging
+	<span class="nt">--dev</span>				Enable dev mode <span class="o">(</span>monitor files <span class="k">for </span>changes and auto-restart<span class="o">)</span>
+	<span class="nt">-p</span> <span class="o">[</span>prefix], <span class="nt">--prefix</span> <span class="o">[</span>prefix]	Change the <span class="nb">command </span>prefix can be any length <span class="o">(</span><span class="nt">--prefix</span> <span class="s2">"_"</span><span class="o">)</span>
+	<span class="nt">--key</span> <span class="o">[</span>key]			Set the discord API key <span class="o">(</span>Use of <span class="nb">env </span>var recommended<span class="o">)</span>
+	<span class="nt">--owner</span> <span class="o">[</span>owner]			Set the bot owner user ID
+	<span class="nt">--admin</span> <span class="o">[</span>permissions]		Set the guild permissions required to be bot admin
+	<span class="nt">--dbl-key</span> <span class="o">[</span>key]			Set top.gg API key <span class="o">(</span>Use of <span class="nb">env </span>var recommended<span class="o">)</span>
+	<span class="nt">--tick-count</span> <span class="o">[</span>count]		Set the number of ticks <span class="o">(</span>Each update is assigned a tick so no. ticks is maximum <span class="nb">time </span>between a single update<span class="o">)</span>
+	<span class="nt">--tick-time</span> <span class="o">[</span><span class="nb">time</span><span class="o">]</span>		Set the <span class="nb">time </span>between each tick <span class="o">(</span><span class="k">in </span>ms<span class="o">)</span>
+	<span class="nt">--channel-limit</span> <span class="o">[</span>limit]		The max amount of statuses per channel <span class="o">(</span>0 / not <span class="nb">set</span> <span class="o">=</span> infinite<span class="o">)</span>
+	<span class="nt">--guild-limit</span> <span class="o">[</span>limit]		The max amount of statuses per guild <span class="o">(</span>0 / not <span class="nb">set</span> <span class="o">=</span> infinite<span class="o">)</span>
+	<span class="nt">--allow-duplicate-updates</span>	Allow guilds to have multiple statuses <span class="k">for </span>the same IP
+	<span class="nt">--support</span> <span class="o">[</span><span class="nb">link</span><span class="o">]</span>		Link to the support server
+	<span class="nt">-h</span>, <span class="nt">--help</span>			Show this <span class="nb">help </span>message
+</code></pre></div></div>
+
+<p>These can all be configured by environment variable e.g. <code class="language-plaintext highlighter-rouge">GS_TICK_COUNT</code></p>
+
+<h2 id="starting-the-bot">Starting the bot</h2>
+<p>Once everything else is done, you’re finally ready to start the bot.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>node bin/discord-gamestatus
+</code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="/PRIVACY/" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Privacy policy</a></li>
+        
+      
+        
+          <li><a href="/TERMS/" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Terms of usage</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 GameStatus. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
