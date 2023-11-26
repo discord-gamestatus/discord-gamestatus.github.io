@@ -3,121 +3,19 @@
 layout: single
 author_profile: false
 toc: true
-toc_label: "Documentation"
+toc_label: "Commands"
 toc_icon: "cog"
 toc_sticky: true
-title: User documentation
+title: Command reference
 ---
 
 <link rel="stylesheet" href="https://cdn.rawgit.com/Douile/discord-visualizer/master/css/discord.css">
 
-# Getting started
-
-## 1. Create your status
-
-Find the short name for your game by searching with the gamelist command (the name you need is
-after the =).
-
-{% discord [
-  {"username": "You","content":"!gamelist Counter-strike","bot":false},
-  {"username": "Discord Gamestatus",
-  "avatar_url":"https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
-  "embed": {
-    "title":"6 Available games",
-    "fields": [{"value":"Counter-Strike 1.5 (2002) = `cs15`\nCounter-Strike 1.6 (2003) = `cs16`\nCounter-Strike: 2D (2004) = `cs2d`\nCounter-Strike: Condition Zero (2004) = `cscz`\nCounter-Strike: Source (2004) = `css`\nCounter-Strike: Global Offensive (2012) = `csgo`"}],
-    "footer": { "text": "1" },
-    "color": 5592575  
-  }}
-] %}
-
-Create the status message by specifying the game name you just found and the IP of your server (you
-may also need to specify a port after your IP using a colon: IP:PORT).
-{% discord [
-  {"username": "You","content":"!status csgo 10.150.150.150","bot":false},
-  {"username": "Discord Gamestatus",
-  "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
-  "embed": {
-    "title": "SERVER NAME",
-    "description": "Playing MAP with X/Y players\nConnect with [steam://connect/10.150.150.150](steam://connect/10.150.150.150)",
-    "fields": [
-      {"value": "Player 1\nPlayer 4", "inline": true},
-      {"value": "Player 2", "inline": true},
-      {"value": "Player 3", "inline": true}
-    ],
-    "footer": {"text":"⚪"}
-  }}
-] %}
-
-Once the message is created it will update every few minutes.
-
-## 2. Customise your status
-
-You can get a list of the currently active statuses in your server using the statusmod command.
-
-{% discord [
-  {"username": "You", "bot": false, "content": "!statusmod"},
-  {"username": "Discord Gamestatus",
-  "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
-  "embed": {
-    "title": "1 Active statuses", 
-    "fields": [
-      {"name": "#0","value":"SERVER NAME [`IP`]\nhttps://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896"}
-    ],
-    "color": 5592575  
-  }}
-] %}
-
-This links you to the active message, and tells you what each statuses' ID is (#ID). Using this ID
-you can view the settings for each status.
-
-{% discord [
-  {"username": "You", "bot": false, "content": "!statusmod 0"},
-  {"username": "Discord Gamestatus",
-  "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
-  "embed": {
-    "title": "#0",
-    "description": "SERVER NAME [`IP`]\nhttps://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896",
-    "color": 5592575,
-    "fields": [
-      {"name":"title","value":"```json\n\"{name}\"\n```","inline":true},
-      {"name":"offlineTitle","value":"```json\n\"{name}\"\n```","inline":true},
-      {"inline":false,"name":" "},
-      {"name":"description","value":"```json\n\"Playing {map} with {numplayers}/{maxplayers} players\\nConnect with {connect}\"\n```","inline":true},
-      {"name":"offlineDescription","value":"```json\n\"Server is offline\"\n```","inline":true},
-      {"inline": false,"name":" "},
-      {"name":"color","value":"```json\n2659522\n```","inline":true},
-      {"name":"offlineColor","value":"```json\n16711680\n```","inline":true},
-      {"inline": false,"name":" "},
-      {"name":"connectUpdate","value":"```json\nfalse\n```","inline":true},
-      {"name":"disconnectUpdate","value":"```json\nfalse\n```","inline":true},
-      {"inline": false,"name":" "},
-      {"name":"columns","value":"```json\n3\n```","inline":true},
-      {"name":"maxEdits","value":"```json\n900000\n```","inline":true},
-      {"name":"dots","value":"```json\n[\"⚪\",\"⚫\"]\n```","inline":true}
-    ]
-  }}
-] %}
-You can modify any of these values using the statusmod command.
-
-{% discord [
-  {"username":"You","bot":false,"content":"!statusmod 0 title New\nTitle"},
-  {"username":"Discord Gamestatus",
-  "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
-  "embed": { 
-    "color": 5592575,
-    "title": "#0",
-    "description": "SERVER NAME [`IP`]\nhttps://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896\nSet `title=New\nTitle`\n_Changes will not take effect until after the status has updated_"
-  }}
-] %}
-
-For more details see [statusmod](#statusmod).
-
-# Commands
 ## help
 List available commands or get help with a specific command.
 
 {% discord [
-  {"username":"You","bot":false,"content":"!help"},
+  {"username":"You","bot":false,"content":"/help"},
   {"username":"Discord Gamestatus",
   "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "embed": {
@@ -126,7 +24,7 @@ List available commands or get help with a specific command.
     "description":"`!botinfo`\n`!gamelist`\n`!help`\n`!limits`\n`!status`\n`!statusclear`\n`!statusmod`\n`!statusrefresh`\n`!statusremove`\n`!tickdebug`",
     "footer": {"text":"Use \"!help commandName\" for detailed help"}
   }},
-  {"content":"You","bot":false,"content":"!help info"},
+  {"content":"You","bot":false,"content":"/help `command:info`"},
   {"username":"Discord Gamestatus",
   "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "embed": {
@@ -142,7 +40,7 @@ List available commands or get help with a specific command.
 Output the list of games available, searchable with any text
 
 {% discord [
-  {"username": "You","content":"!gamelist Counter-strike","bot":false},
+  {"username": "You","content":"/gamelist `game:Counter-strike`","bot":false},
   {"username": "Discord Gamestatus",
   "avatar_url":"https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "embed": {
@@ -158,7 +56,7 @@ Create a status message that updates automatically in the current channel.
 
 
 {% discord [
-  {"username": "You","content":"!status csgo 10.150.150.150:27015","bot":false},
+  {"username": "You","content":"!status `game:csgo` `ip:10.150.150.150:27015`","bot":false},
   {"username": "Discord Gamestatus",
   "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "embed": {
@@ -208,7 +106,7 @@ List/View/Modify status message settings.
 ### List status messages in current guild
 
 {% discord [
-  {"username": "You", "bot": false, "content": "!statusmod"},
+  {"username": "You", "bot": false, "content": "/statusmod list"},
   {"username": "Discord Gamestatus",
   "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "embed": {
@@ -223,7 +121,7 @@ List/View/Modify status message settings.
 ### View settings for a status
 
 {% discord [
-  {"username": "You", "bot": false, "content": "!statusmod 0"},
+  {"username": "You", "bot": false, "content": "/statusmod get `status-id:0`"},
   {"username": "Discord Gamestatus",
   "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "embed": {
@@ -253,7 +151,7 @@ List/View/Modify status message settings.
 ### Modify setting for a status
 
 {% discord [
-  {"username":"You","bot":false,"content":"!statusmod 0 title New\nTitle"},
+  {"username":"You","bot":false,"content":"/statusmod set `status-id:0` `setting:title` `value:New\nTitle`"},
   {"username":"Discord Gamestatus",
   "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "embed": { 
@@ -262,6 +160,8 @@ List/View/Modify status message settings.
     "description": "SERVER NAME [`IP`]\nhttps://discordapp.com/channels/484737965386366979/722100887941677156/963350271407312896\nSet `title=New\nTitle`\n_Changes will not take effect until after the status has updated_"
   }}
 ] %}
+
+### Reset a setting
 
 ### Settings values
 
@@ -294,7 +194,7 @@ You can find the channel/message ID by enabling developer mode in Discord's sett
 clicking the channel/message and selecting Copy ID.
 
 {% discord [
-  {"username":"You","bot":false,"content":"!statusremove #channel ID"},
+  {"username":"You","bot":false,"content":"/statusremove `channel:<#channel>` `message:1157618316907663381`"},
   {"username":"Discord Gamestatus",
   "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "embed":{
@@ -308,7 +208,7 @@ clicking the channel/message and selecting Copy ID.
 Delete all status messages in the current channel.
 
 {% discord [
-  {"username":"You","bot":false,"content":"!statusclear"},
+  {"username":"You","bot":false,"content":"/statusclear"},
   {"username":"Discord Gamestatus",
   "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "content":"1 Status updates have been cleared"
@@ -320,7 +220,7 @@ Force the bot to send a new status message for all those that are configured in 
 (it will also attempt to delete the old messages).
 
 {% discord [
-  {"username":"You","bot":false,"content":"!statusrefresh"},
+  {"username":"You","bot":false,"content":"/statusrefresh"},
   {"username":"Discord Gamestatus",
   "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "embed": {
@@ -334,7 +234,7 @@ Force the bot to send a new status message for all those that are configured in 
 View (and refresh) the limits for the current server (or yourself if sent via DM).
 
 {% discord [
-  {"username":"You","bot":false,"content":"!limits"},
+  {"username":"You","bot":false,"content":"/limits"},
   {"username":"Discord Gamestatus",
   "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "embed": {
@@ -354,7 +254,7 @@ per guild.
 Get information about the bot.
 
 {% discord [
-  {"username":"You","bot":false,"content":"!botinfo"},
+  {"username":"You","bot":false,"content":"/botinfo"},
   {"username":"Discord Gamestatus",
   "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "embed": {
