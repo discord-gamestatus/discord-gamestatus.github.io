@@ -56,7 +56,7 @@ Create a status message that updates automatically in the current channel.
 
 
 {% discord [
-  {"username": "You","content":"!status `game:csgo` `ip:10.150.150.150:27015`","bot":false},
+  {"username": "You","content":"/status `game:csgo` `ip:10.150.150.150:27015`","bot":false},
   {"username": "Discord Gamestatus",
   "avatar_url": "https://cdn.discordapp.com/avatars/659050996730822665/c85a9ca07b5706a0c37cc433c7549b5d.webp?size=80",
   "embed": {
