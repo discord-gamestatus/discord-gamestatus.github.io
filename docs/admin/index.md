@@ -13,8 +13,8 @@ Before setting up the bot you need to create a discord application and generate 
 # Installation
 There are several ways to self-host the bot.
 
-- [Using docker](./docker/) (recommended for new users)
-- [Manually](./manual/)
+- [Using docker](./docker) (recommended for new users)
+- [Manually](./manual)
 
 # Configuring
 _FIXME: outdated_
