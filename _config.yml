@@ -47,6 +47,7 @@ minima:
 
 header_pages:
   - docs/index.md
+  - docs/user/faq.md
   - transparency.html
 
 footer:

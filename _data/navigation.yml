@@ -1,5 +1,7 @@
 main:
   - title: "Documentation"
     url: "/docs/"
+  - title: "FAQ"
+    url: "/docs/user/faq/"
   - title: "Transparency"
     url: "/transparency/"

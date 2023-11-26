@@ -6,6 +6,7 @@ An open-source discord bot that automatically updates your server with the curre
 
 - [Learn how to use bot commands](./docs/user/)
 - [Learn how to host the bot yourself](./docs/admin/)
+- [Read our FAQ](./docs/user/faq/)
 
 ## Built using
 
